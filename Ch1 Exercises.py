@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 
 
 
-# ------------------Helper Functions-------------------------------------
+# ------------------Helper Functions--------------------------------------
 def spikeCountWindow(input, window):
     '''for an input array of spikes, this returns an array of the number of 
     spikes that occur within each window '''
@@ -104,6 +104,54 @@ def Ex1():
 
 
 
+def Ex2():
+    '''
+    Add a refractory period to the Poisson spike generator by allowing
+    the firing rate to depend on time. Initially, set the firing rate to a
+    constant value, r(t) =r0. After every spike, set r(t) to 0, and then
+    allow it to recover exponentially back to r0 with a time constant TauRef
+    that controls the refractory recovery rate. In other words, have r(t)
+    obey the equation 
+    
+    TauRef(dr/dt) =r0 - r
+    
+    except immediately after a spike, when it is set to 0. Plot the coe∆-
+    cient of variation as a function of TauRef over the range 1 ms <= TauRef <= 20 ms, and plot interspike interval histograms for a few diferent values of TauRef in this range. Compute the Fano factor for spike counts obtained over counting intervals ranging from 1 to 100 ms for the case TauRef =10 ms.
+    '''
+    x = []
+    
+    
+def Ex3():
+    '''
+    '''
+    
+def Ex4():
+    '''
+    '''
+    
+def Ex5():
+    '''
+    '''
+    
+def Ex6():
+    '''
+    '''
+    
+def Ex7():
+    '''
+    '''
+    
+def Ex8():
+    '''
+    '''
+    
+def Ex9():
+    '''
+    '''
+    
+def Ex10():
+    '''
+    '''
 
 
 def main():
@@ -115,8 +163,20 @@ def main():
     #for key in matc1p8:
         #print (key, ": ", len(matc1p8[key])     
     #print (len(matc10p1))
+
+    #execute exercises here
+    #Ex1()
+    Ex2()
+    #Ex3()
+    #Ex4()
+    #Ex5()
+    #Ex6()
+    #Ex7()
+    #Ex8()
+    #Ex8()
+    #Ex9()
+    #Ex10()
     
-    Ex1()
 
 if __name__ == "__main__":
     main()
