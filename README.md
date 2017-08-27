@@ -12,6 +12,10 @@ Answers to the exercises in Theoretical Neuroscience, Dayan and Abbott (2001)
 
 
 
+![alt text](https://raw.githubusercontent.com/jtbreffle/Theoretical-Neuroscience-Exercises/master/ReadMe_Figures/c1p8.png)
+
+
+
 ### Chapter 2: Neural Encoding II: Reverse correaltion abd visual receptive fields
 
 ### Chapter 3: Neural decoding
