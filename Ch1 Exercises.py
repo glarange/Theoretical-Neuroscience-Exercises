@@ -384,13 +384,92 @@ def Ex4():
     Tauapprox * (drapprox / dt) = -rapprox ,
     
     except that rapprox -> rapprox + 1/Tauapprox every time a spike occurs.
-    Make plots of the true rate, the spike sequence generated, and the
-    estimated rate. Experiment with a few different values of Tauapprox
-    in the range of 1 to 100 ms. Determine the best value of Tauapprox
-    by computing the average squared error of the estimate,
-    INTEGRAL: dt(r(t) - rapprox(t))2, for different values of Tauapprox,
-    and finding the value of Tauapprox that minimizes this error.
+    
+    *Make plots of the true rate, the spike sequence generated, and the
+    estimated rate. 
+    *Experiment with a few different values of Tauapprox in the range of 1 to
+    100 ms. 
+    *Determine the best value of Tauapprox by computing the average squared
+    error of the estimate, INTEGRAL: dt(r(t) - rapprox(t))2, for different
+    values of Tauapprox, and finding the value of Tauapprox that minimizes
+    this error.
     '''
+    
+    
+    #10s with points every 1ms
+    x = np.linspace(0, 10, 1001)
+    
+    
+    #samples drawn from a poisson distribution every 1ms for 10s, with probability corresponding to 100Hz
+    yNoRefPer = np.random.poisson(0.1, 1001)    
+    
+    
+    #samples drawn from a poisson distribution every 1ms for 10s, with probability reseting and then increasing exponentially after each spike
+    yRefPer = []
+    prob = 0.1
+    #probability of a spike is set to 100Hz initially, if a spike occurs it is reset to 0, each ms that passes without a spike increases the probability of a spike by 1Hz
+    for i in range(len(x)):
+        yRefPer = yRefPer + [np.random.poisson(prob, 1)]
+        if yRefPer[i] > 0:
+            prob = 0
+        else:
+            prob = prob + 0.01
+    
+    
+    #variable firing rate r(t) = 100(1+ cos(2PIt/300 ms))
+    yVarFir = []
+    for i in range(len(x)):
+        t = i / 2 #time t in ms 
+        prob = 100 * (1 + np.cos(2 * np.pi * (t / 300) ) )
+        yVarFir = yVarFir + [np.random.poisson(prob, 1)]
+   
+            
+            
+    
+    #a single ms timepoint can have >1 event so...
+    #this for-loop rounds all events >1 to a single spike
+    for i in range(len(yNoRefPer)):  
+        if yNoRefPer[i] > 0:       
+            yNoRefPer[i] = 1
+            
+    #a single ms timepoint can have >1 event so...
+    #this for-loop rounds all events >1 to a single spike
+    for i in range(len(yRefPer)):  
+        if yRefPer[i] > 0:       
+            yRefPer[i] = 1 
+        else:
+            yRefPer[i] = 0
+            
+    #a single ms timepoint can have >1 event so...
+    #this for-loop rounds all events >1 to a single spike
+    for i in range(len(yVarFir)):  
+        if yVarFir[i] > 0:       
+            yVarFir[i] = 1   
+            
+           
+    plt.figure(num='Exercise 4')
+    plt.subplot(3, 1, 1)
+    #plt.hist(ISI)
+    plt.title("Variable fire rate")
+    plt.ylabel('Spikes')
+    plt.xlabel('Time (S)')
+    plt.plot(x, yVarFir)  
+    
+    #plt.subplot(3, 1, 2)
+    #plt.title("Poisson Generated Spikes, 100Hz")
+    #plt.ylabel('Spikes')
+    #plt.xlabel('Time (S)')
+    #plt.plot(x, yNoRefPer)  
+    
+    #plt.subplot(3, 1, 3)
+    #plt.title("Poisson Generated Spikes with Refractory Period \n (Spike frequency increases by 1Hz per ms that passes without a spike)")
+    #plt.ylabel('Spikes')
+    #plt.xlabel('Time (S)')
+    #plt.plot(x, yRefPer)     
+    
+    
+    plt.tight_layout()
+    plt.show()    
     
     
     
@@ -619,8 +698,8 @@ def main():
     #execute exercises here
     #Ex1()
     #Ex2()
-    Ex3() #not finished
-    #Ex4() #not finished
+    #Ex3() #not finished
+    Ex4() #not finished
     #Ex5() #not finished
     #Ex6() #not finished
     #Ex7() #not finished
