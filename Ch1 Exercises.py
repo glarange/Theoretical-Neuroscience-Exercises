@@ -483,6 +483,20 @@ def Ex5():
     interval. Resolve this paradox.
     '''
     
+
+    print ( "\
+    We do not expect to see all N spikes appearing within the first 1% of the\
+    \n time interval because the set of all possible sequences of N spikes \
+    \n occurring within the first 1% of the time interval is a very small \
+    \n subset of the total possible sequences of N spikes occuring withing the \
+    \n first 100% of the time interval. \
+    \n    Although any give sequence from either set is equally likely, the \
+    \n first set has many fewer possible members and therefore the chance of \
+    \n some individual member of the set occuring is very small.\
+    ")
+    
+    #TODO: what is the exact probability?
+    
     
     
 def Ex6():
@@ -699,7 +713,7 @@ def main():
     #Ex1()
     #Ex2()
     #Ex3() #not finished
-    Ex4() #not finished
+    #Ex4() #not finished
     #Ex5() #not finished
     #Ex6() #not finished
     #Ex7() #not finished
