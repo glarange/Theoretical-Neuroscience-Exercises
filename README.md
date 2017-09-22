@@ -6,6 +6,13 @@ Answers to the exercises in Theoretical Neuroscience, Dayan and Abbott (2001)
 ### Chapter 1: Neural Encoding I; Firing rates and spike statistics
 
 ![alt text](https://raw.githubusercontent.com/jtbreffle/Theoretical-Neuroscience-Exercises/master/ReadMe_Figures/c1p1.png)
+    Generate spikes for 10 s (or longer if you want better statistics) using
+    a Poisson spike generator with a constant rate of 100 Hz, and record
+    their times of occurrence. Compute the coeffcient of variation of the
+    interspike intervals, and the Fano factor for spike counts obtained
+    over counting intervals ranging from 1 to 100 ms. Plot the interspike
+    interval histogram. 
+    
 
 ![alt text](https://raw.githubusercontent.com/jtbreffle/Theoretical-Neuroscience-Exercises/master/ReadMe_Figures/c1p2.png)
 
