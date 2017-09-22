@@ -14,8 +14,8 @@ Answers to the exercises in Theoretical Neuroscience, Dayan and Abbott (2001)
     interspike intervals, and the Fano factor for spike counts obtained
     over counting intervals ranging from 1 to 100 ms. Plot the interspike
     interval histogram. 
-
-
+<br />
+<br />
 
 ![alt text](https://raw.githubusercontent.com/jtbreffle/Theoretical-Neuroscience-Exercises/master/ReadMe_Figures/c1p1.png)
     Generate spikes for 10 s (or longer if you want better statistics) using
