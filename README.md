@@ -5,9 +5,8 @@ Answers to the exercises in Theoretical Neuroscience, Dayan and Abbott (2001)
 ## Part I: Neural Encoding and Decoding
 ### Chapter 1: Neural Encoding I; Firing rates and spike statistics
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/jtbreffle/Theoretical-Neuroscience-Exercises/master/ReadMe_Figures/c1p1.png">
-</p>
+
+<img src="https://raw.githubusercontent.com/jtbreffle/Theoretical-Neuroscience-Exercises/master/ReadMe_Figures/c1p1.png">
 
     1. Generate spikes for 10 s (or longer if you want better statistics) using
     a Poisson spike generator with a constant rate of 100 Hz, and record
